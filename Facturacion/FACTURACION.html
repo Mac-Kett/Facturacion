@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>FACTURACION</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12">
+                <label>N° FACTURA: <b><label><label id="nfactura"></b></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <label>RAZON SOCIAL</label>
+            <input type="text" id="razonsocial" class="form-control" />
+
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-sm-12">
+        <label>CUIT</label>
+        <input type="text" id="cuit" class="form-control" />
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col.sm.12">
+            <label>DESCRIPCION</label>
+            <input type="text" id="descripcion" class="form-control" />
+        </div>
+    
+
+    <div class="col-lg-4 col.sm.12">
+        <label>FECHA</label>
+        <input type="text" id="fecha" class="form-control" />
+    </div>
+</div>
+
+<div class="row" style="margin-top:10px">
+    <div class="col-lg-4 col-sm-12">
+        <button id="detalle" class="form-control btn-outline-dark" onclick="CrearRegistro()">AGREGAR DETALLE</button>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
+<script>
+    function CrearRegistro(){
+        let contenedor = document.getElementById("contenedor");
+
+        let fila = document.createElement("div");
+        fila.style = "margin-top: 15px";
+
+        let columnaDescripcion = document.createElement("div");
+        columnaDescripcion.className = "col";
+
+        let rand = Math.random(1, 1000);
+
+        let contenido = document.createTextNode("Descripción de compra $" + rand);
+        columnaDescripcion.appendChild(contenido);
+
+        fila.appendChild(columnaDescripcion);
+        contenedor.appendChild(fila);
+
+    }
+</script>
+
+<style>
+    body{
+        font-size:20 px;
+    }
+</style>
